@@ -16,6 +16,10 @@ app.use(express.json());
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 // Health check endpoint
+app.get('/', (req, res) => {
+  res.send('FundSpark AI Backend is running!');
+});
+
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'FundSpark AI Backend is running' });
 });
@@ -80,7 +84,7 @@ app.post('/api/generate-fundraising', async (req, res) => {
     }
 
     let prompt = "";
-    
+
     if (type === 'email') {
       prompt = `Write a compelling cold email to a potential investor (${targetAudience}) for the following startup. 
       Keep it concise, personalized, and action-oriented.
@@ -106,10 +110,10 @@ app.post('/api/generate-fundraising', async (req, res) => {
     });
 
     const text = response.text || "";
-    
+
     let subject = undefined;
     let content = text;
-    
+
     if (type === 'email') {
       const subjectMatch = text.match(/Subject:(.*)/i);
       if (subjectMatch) {
@@ -172,7 +176,7 @@ app.post('/api/market-intelligence', async (req, res) => {
     if (!text) throw new Error("No text generated");
 
     const data = JSON.parse(text);
-    
+
     const chunks = response.candidates?.[0]?.groundingMetadata?.groundingChunks;
     const sources = [];
     if (chunks) {
@@ -202,7 +206,7 @@ app.post('/api/review-pitch-deck', async (req, res) => {
     }
 
     // Combine all slide text for comprehensive analysis
-    const fullDeckText = slides.map((slide, idx) => 
+    const fullDeckText = slides.map((slide, idx) =>
       `Slide ${idx + 1}: ${slide.title}\n${slide.content}`
     ).join('\n\n');
 
@@ -235,7 +239,7 @@ Be honest, specific, and actionable. Focus on what matters to investors.`;
           properties: {
             overallScore: { type: Type.NUMBER },
             fundingReadiness: { type: Type.NUMBER },
-            strengths: { 
+            strengths: {
               type: Type.ARRAY,
               items: { type: Type.STRING }
             },
