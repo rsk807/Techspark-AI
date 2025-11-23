@@ -1,20 +1,67 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
 
-# Run and deploy your AI Studio app
+# Techspark AI
 
-This contains everything you need to run your app locally.
+**AI-Powered Startup Accelerator for Founders & Investors**
 
-View your app in AI Studio: https://ai.studio/apps/drive/1SkHSXO3B3-rS38cgyOhqK1luidFB4CeO
+---
 
-## Run Locally
+## 🚀 Product Vision
+Techspark AI is an AI-powered platform that helps early-stage startups and investors with:
+- Pitch deck analysis
+- Startup scoring
+- Customer insight
+- Competitor mapping
+- Investor matching
+- Business report generation
+- Marketing & content suggestions
 
-**Prerequisites:**  Node.js
+---
 
+## ⭐ Core Features
+1. **Startup Creator**: Multi-step form for startup data, AI autofill, and validation.
+2. **Pitch Deck Analyzer**: Upload PDF or text, get AI scores and suggestions.
+3. **Startup Score Engine**: AI-calculated strength, funding readiness, and innovation index.
+4. **Customer Analysis**: Persona, ICP, pain points, and acquisition channels.
+5. **Competitor Analyzer**: Side-by-side competitor comparison and feature gap analysis.
+6. **Investor Matcher**: AI-matched investors, pitch personalization, and email templates.
+7. **Content AI Engine**: Generate taglines, hero text, social posts, and elevator pitches.
+8. **Recommendation Engine**: Actionable next steps and improvement suggestions.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+---
+
+## ⭐ Architecture
+- **Frontend**: React + Vite, TailwindCSS, Shadcn UI, Recharts
+- **Backend**: Cloudflare Worker, Gemini 2.0 API
+- **Storage**: Cloudflare D1/KV or localStorage (demo)
+
+---
+
+## ⭐ API Endpoints (Cloudflare Worker)
+- `/api/analyze-deck` — Analyze pitch deck (PDF/text)
+- `/api/startup-score` — Calculate startup scores
+- `/api/customers` — Customer persona and insights
+- `/api/competitors` — Competitor analysis
+- `/api/investor-match` — Investor matching
+- `/api/content` — Content generation
+- `/api/recommendations` — Next-step suggestions
+
+---
+
+## ⭐ Setup & Usage
+1. **Clone the repo**
+2. `npm install`
+3. Add your Gemini API key to `.env` as `VITE_GEMINI_API_KEY`
+4. `npm run dev` for local dev
+5. `npx wrangler deploy` to deploy backend
+
+---
+
+## ⭐ Contribution
+- Fork, branch, and PR for new features
+- See `/components/mockups/` for UI ideas
+- All feedback and issues welcome!
+
+---
+
+## ⭐ License
+MIT
