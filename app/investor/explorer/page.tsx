@@ -6,8 +6,7 @@ import {
   Search, Filter, TrendingUp, MapPin, Building2, Globe, 
   ArrowRight, Star, Zap, Target, Loader2, RefreshCw
 } from 'lucide-react';
-
-const API_BASE = 'http://localhost:8000/api';
+import { API_BASE } from '../../../lib/apiConfig';
 
 interface Startup {
   id: number;

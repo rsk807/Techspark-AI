@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import DashboardLayout from '../../components/layout/DashboardLayout';
 import { motion } from 'framer-motion';
 import { Building2, Users, DollarSign, Calendar, Globe, MapPin, Tag, FileText, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
-
-const API_BASE = 'http://localhost:8000/api';
+import { API_BASE } from '../../lib/apiConfig';
 
 const CreateStartup: React.FC = () => {
   const navigate = useNavigate();

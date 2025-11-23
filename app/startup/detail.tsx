@@ -6,8 +6,7 @@ import {
   Building2, Globe, MapPin, Tag, Calendar, Plus, FileText, Link as LinkIcon,
   Trash2, Loader2, Brain, CheckCircle2, AlertCircle, TrendingUp, Users, Target
 } from 'lucide-react';
-
-const API_BASE = 'http://localhost:8000/api';
+import { API_BASE } from '../../lib/apiConfig';
 
 interface Startup {
   id: number;
